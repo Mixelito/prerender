@@ -1,0 +1,13 @@
+{
+ "AWSEBDockerrunVersion": "1",
+ "Image": {
+    "Name": "reclameaqui/prerender",
+    "Update": "true"
+  },
+ "Ports": [
+   {
+     "ContainerPort": "9090",
+     "HostPort": "9090"
+   }
+ ]
+}
