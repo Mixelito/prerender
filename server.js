@@ -13,6 +13,7 @@ var server = prerender({
 server.use(prerender.sendPrerenderHeader());
 server.use(prerender.blockResources());
 // server.use(prerender.removeScriptTags());
+server.use(prerender.removeHeadTagAlexa());
 server.use(prerender.httpHeaders());
 server.use(prerender.removeMetaTagFragment());
 server.use(prerender.s3HtmlCache());
