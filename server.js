@@ -16,6 +16,11 @@ server.use(prerender.blockResources());
 server.use(prerender.removeHeadTagAlexa());
 server.use(prerender.httpHeaders());
 server.use(prerender.removeMetaTagFragment());
-server.use(prerender.s3HtmlCache());
+
+if (process.env.CACHE_STORAGE == 's3') {
+    server.use(prerender.s3HtmlCache());
+}else if (process.env.CACHE_STORAGE == 'gcs') {
+    server.use(prerender.gcsHtmlCache());
+}
 
 server.start();
